@@ -1,0 +1,107 @@
+/* --- Header Styling --- */
+.header {
+  background-color: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100vw;         /* Thêm dòng này để header full ngang */
+  left: 0;              /* Đảm bảo header bắt đầu từ mép trái */
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;      /* Không cho xuống dòng */
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;              /* Thêm khoảng cách giữa các khối */
+}
+
+/* Logo */
+.header-logo a {
+  font-size: 2rem;           /* Tăng kích thước chữ */
+  font-weight: 800;          /* Đậm hơn */
+  color: #0d6efd;            /* Màu xanh nổi bật */
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 2px;       /* Giãn chữ nhẹ */
+  margin-right: 2.5rem;      /* Cách xa thanh tìm kiếm */
+}
+
+.header-logo {
+  flex-shrink: 0;
+}
+
+/* Thanh tìm kiếm */
+.header-search {
+  display: flex;
+  width: 40%;                /* Giảm chiều rộng để logo có không gian */
+  flex: 1 1 0;
+  min-width: 220px;
+  margin-right: 2rem;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.header-search button {
+  padding: 0 1rem;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Các hành động: Tài khoản, Giỏ hàng */
+.header-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  white-space: nowrap;    /* Không cho các link bị xuống dòng */
+}
+
+.header-actions a {
+  font-size: 1.1rem;         /* Tăng cỡ chữ cho các link */
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase; /* In hoa nếu muốn nổi bật */
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.header-actions a:hover {
+  color: #0d6efd;
+}
+
+/* CSS cho nút đăng xuất */
+.logout-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #333;
+  font-family: inherit;
+  font-size: 1.1rem;      /* Cùng cỡ chữ với .header-actions a */
+  font-weight: 600;       /* Cùng độ đậm */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover {
+  color: #0d6efd;
+}

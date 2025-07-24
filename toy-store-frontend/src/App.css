@@ -1,0 +1,312 @@
+/* === CÀI ĐẶT CHUNG & RESET === */
+html, body, #root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #343a40;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* === HEADER === */
+.header {
+  background-color: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+ 
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo a {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.header-search {
+  display: flex;
+  width: 45%;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.header-search button {
+  padding: 0 1rem;
+  border: 1px solid #0d6efd;
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-actions a {
+  color: #495057;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.header-actions a:hover {
+  color: #0d6efd;
+}
+
+/* === MAIN CONTENT === */
+.main-content {
+  max-width: 1200px;
+  margin: 2.5rem auto; /* Tăng khoảng cách với header */
+  padding: 0 2rem;
+}
+
+/* === STYLING CHO CÁC TRANG CON (PROFILE, LOGIN, REGISTER) === */
+.page-container {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  width: 50vw;              /* Rộng bằng 1/2 trang */
+  max-width: 700px;         /* Không vượt quá 700px trên màn hình lớn */
+  min-width: 320px;         /* Không nhỏ hơn 320px trên màn hình nhỏ */
+  margin: 2rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 800px;   /* Thêm dòng này để tăng chiều dài tối thiểu */
+}
+
+.page-container p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.page-container p strong {
+  color: #343a40;
+}
+
+/* === FORM STYLING === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+form div {
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+}
+
+form button {
+  padding: 0.9rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem;
+}
+
+form button:hover {
+  background-color: #0b5ed7;
+}
+
+.profile-container {
+  background-color: #ffffff;
+  padding: 3rem 4rem;         /* Tăng padding cho rộng hơn */
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  max-width: 1000px;          /* Tăng chiều rộng tối đa */
+  min-width: 350px;
+  width: 60vw;                /* Rộng hơn: 60% chiều ngang màn hình */
+  min-height: 600px;         /* Tăng chiều dài tối thiểu */
+  margin: 2rem auto;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Xóa bỏ border cho hàng cuối cùng chứa nút Sửa */
+.actions-row {
+   border-bottom: none;
+   padding: 1.25rem 0;
+   display: flex;
+   justify-content: flex-end; /* Đẩy nút về cuối bên phải */
+}
+
+.info-label {
+  font-weight: 500;
+  color: #6c757d;
+  flex-basis: 30%;
+  text-align: left;
+}
+
+.info-value {
+  flex-basis: 70%;
+  text-align: left;
+  color: #212529;
+  font-weight: 500;
+}
+
+/* Style cho các link hành động như "Quản lý", "Xem chi tiết" */
+.action-link {
+  color: #0d6efd;
+  cursor: pointer;
+  font-weight: 600;
+}
+.action-link:hover {
+  text-decoration: underline;
+}
+
+.info-row input {
+  flex-basis: 70%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Các nút Sửa/Lưu/Hủy */
+.actions-row button, .edit-btn {
+  padding: 0.6rem 1.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  color: #495057;
+  transition: all 0.2s ease-in-out;
+}
+
+.actions-row button:hover, .edit-btn:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.actions-row .save-btn {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+  margin-right: 1rem;
+}
+.actions-row .save-btn:hover {
+  background-color: #0b5ed7;
+}
+
+.message {
+  text-align: center;
+  color: #198754;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+/* === MAIN MENU === */
+.main-menu {
+  background-color: #c81f34; /* Màu đỏ đặc trưng của MyKingdom */
+  color: white;
+  width: 100%;
+}
+
+.main-menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center; /* Căn giữa menu */
+}
+
+.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem; /* Khoảng cách giữa các mục */
+}
+
+.main-menu a {
+  display: block;
+  padding: 0.9rem 1.2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.main-menu a:hover {
+  background-color: #a91a2c; /* Màu đỏ đậm hơn khi hover */
+}
