@@ -14,6 +14,7 @@ import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 import AdminLoginPage from './pages/admin/AdminLoginPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import UserManagementPage from './pages/admin/UserManagementPage';
 
 // Import các component bảo vệ route
 import ProtectedRoute from './components/ProtectedRoute';
@@ -51,6 +52,7 @@ const AppContent = () => {
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+          <Route path="/admin/users" element={<AdminRoute><UserManagementPage /></AdminRoute>} />
         </Routes>
       </main>
     </>

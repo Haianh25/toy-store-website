@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const AdminLoginPage = () => {
@@ -7,23 +8,23 @@ const AdminLoginPage = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-
-    // --- KIỂM TRA TÀI KHOẢN ADMIN CỐ ĐỊNH ---
-    if (email === 'admin@gmail.com' && password === '1') {
-      alert('Đăng nhập Admin thành công!');
+    try {
+      // Gọi API login của backend
+      const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
       
-      // Lưu một giá trị đơn giản để xác nhận đã đăng nhập admin
-      localStorage.setItem('adminToken', 'true'); 
-      
-      // Xóa token của user thường nếu có để tránh xung đột
-      localStorage.removeItem('token');
-
-      navigate('/admin/dashboard');
-    } else {
-      setError('Email hoặc mật khẩu admin không đúng.');
+      // Kiểm tra xem tài khoản có phải là admin không
+      if (data && data.isAdmin) {
+        // Nếu đúng, lưu token THẬT của admin
+        localStorage.setItem('adminToken', data.token);
+        navigate('/admin/dashboard');
+      } else {
+        setError('Tài khoản này không có quyền truy cập.');
+      }
+    } catch (err) {
+      setError('Email hoặc mật khẩu không đúng.');
     }
   };
 
